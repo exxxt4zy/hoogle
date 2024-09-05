@@ -6,14 +6,14 @@ import (
 )
 
 func helloHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Hello, World!")
+	fmt.Fprintln(w, "Ok!")
 }
 
 func main() {
 	http.HandleFunc("/", helloHandler)
 
-	fmt.Println("Starting server on :8080")
+	fmt.Println("Запущен сервер на:8080")
 	if err := http.ListenAndServe(":8080", nil); err != nil {
-		fmt.Println("Error starting server:", err)
+		fmt.Println("Ошибка запуска сервера:", err)
 	}
 }
